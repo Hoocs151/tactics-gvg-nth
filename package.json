@@ -1,0 +1,37 @@
+{
+  "name": "bon-lang-tactics",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Công cụ lập kế hoạch chiến thuật bang hội cho game Nghịch Thuỷ Hàn",
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/generate-icons.js && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "generate-icons": "node scripts/generate-icons.js"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "html2canvas": "^1.4.1",
+    "lucide-react": "^1.8.0",
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tailwind-merge": "^3.5.0",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
