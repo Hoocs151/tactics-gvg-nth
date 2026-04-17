@@ -82,7 +82,7 @@ const LayerItem = memo(function LayerItem({
   );
 });
 
-export const LayersPanel = memo(function LayersPanel() {
+export const LayersPanel = memo(function LayersPanel({ onClose }: LayersPanelProps) {
   const {
     units, lines, circles, markers, strokes, labels, hiddenIds,
     selectedIds, addToSelection, clearSelection,
@@ -170,7 +170,20 @@ export const LayersPanel = memo(function LayersPanel() {
       style={{ background: "linear-gradient(180deg, var(--surface) 0%, var(--primary) 100%)", borderRight: "1px solid var(--border)" }}>
       <div className="px-3 py-2 flex items-center justify-between" style={{ borderBottom: "1px solid var(--border)" }}>
         <h3 className="text-xs font-semibold" style={{ color: "var(--gold)" }}>LAYERS</h3>
-        <span className="text-[10px]" style={{ color: "var(--text-muted)" }}>{allItems.length} items</span>
+        <div className="flex items-center gap-2">
+          <span className="text-[10px]" style={{ color: "var(--text-muted)" }}>{allItems.length} items</span>
+          {onClose && (
+            <button
+              onClick={onClose}
+              className="p-0.5 rounded hover:bg-white/10 transition-colors"
+              title="Đóng"
+            >
+              <svg className="w-4 h-4" style={{ color: "var(--text-muted)" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto p-2 space-y-3">
